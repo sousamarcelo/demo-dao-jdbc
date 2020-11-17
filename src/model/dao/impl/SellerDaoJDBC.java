@@ -102,9 +102,9 @@ public class SellerDaoJDBC implements SellerDao {
 			int rows = st.executeUpdate();
 			
 			if (rows < 1) {
-				throw new DbException("Id: " + id +" não encontrado");
+				throw new DbException("Id: " + id +" not found");
 			} else {
-				System.out.println("Id: " + id +" exluido com sucesso!");
+				System.out.println("Id: " + id +" deleted!");
 			}
 			
 		} catch(SQLException e) {
