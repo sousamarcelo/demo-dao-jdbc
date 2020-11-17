@@ -37,13 +37,19 @@ public class Program2 {
 		 * idDeleted + " deleted sucess");
 		 */
 
-		System.out.println("\n===== TEST 4: Department find By Id =====");
-		System.out.print("inform Id department: ");
-		Integer idDepartment = sc.nextInt();		
-		newDepartment = departmentDao.findById(idDepartment);
-		System.out.println(newDepartment);
+		/*
+		 * System.out.println("\n===== TEST 4: Department find By Id =====");
+		 * System.out.print("inform Id department: "); Integer idDepartment =
+		 * sc.nextInt(); newDepartment = departmentDao.findById(idDepartment);
+		 * System.out.println(newDepartment);
+		 */
 		
 		System.out.println("\n===== TEST 5: Department findall =====");
+		List<Department> list = departmentDao.findAll();
+		for (Department dep : list) {
+			System.out.println(dep);
+		}
+		
 
 		sc.close();
 		System.out.println();
