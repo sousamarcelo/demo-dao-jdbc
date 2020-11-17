@@ -2,6 +2,7 @@ package application;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import db.DB;
 import model.dao.DaoFactory;
@@ -13,6 +14,7 @@ public class Program {
 
 	public static void main(String[] args) {	
 		
+		Scanner sc = new Scanner(System.in);
 		
 	
 		SellerDao sellerDao = DaoFactory.createSellerDao();
@@ -45,6 +47,12 @@ public class Program {
 		sellerDao.update(seller);
 		System.out.println("Update completed");
 		
+		System.out.println("\n===== TEST 6: seller delete =====");
+		System.out.print("Digite um Id?: ");
+		Integer id = sc.nextInt();
+		sellerDao.deleteById(id);
+		
+		sc.close();
 		System.out.println();
 		DB.closeConnection();
 
